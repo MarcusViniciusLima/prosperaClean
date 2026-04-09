@@ -200,6 +200,8 @@ console.log('✅ Próspera Clean & Care — Sistema carregado.');
 
 window.addEventListener('load', () => {
   const loader = document.getElementById('loader');
-  loader.style.opacity = '0';
-  setTimeout(() => loader.remove(), 400);
+  setTimeout(() => {
+    loader.style.opacity = '0';
+    setTimeout(() => loader.remove(), 400);
+  }, 800); // 800ms de espera antes de começar a sumir
 });
