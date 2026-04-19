@@ -23,7 +23,6 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <!-- ========== HEADER / NAV ========== -->
     <!-- LOADING SCREEN -->
     <div
       id="loader"
@@ -92,6 +91,7 @@
       }
     </style>
 
+    <!-- ========== HEADER / NAV ========== -->
     <header class="header" id="header">
       <nav class="nav container">
         <a href="#" class="nav__logo">
@@ -163,24 +163,208 @@
         </div>
         <div class="hero__stats">
           <div class="stat">
-            <span class="stat__number">500+</span>
-            <span class="stat__label">Clientes Atendidos</span>
+            <span class="stat__number">500+</span
+            ><span class="stat__label">Clientes Atendidos</span>
           </div>
           <div class="stat__divider"></div>
           <div class="stat">
-            <span class="stat__number">98%</span>
-            <span class="stat__label">Satisfação</span>
+            <span class="stat__number">98%</span
+            ><span class="stat__label">Satisfação</span>
           </div>
           <div class="stat__divider"></div>
           <div class="stat">
-            <span class="stat__number">5★</span>
-            <span class="stat__label">Avaliação</span>
+            <span class="stat__number">5★</span
+            ><span class="stat__label">Avaliação</span>
           </div>
         </div>
       </div>
       <div class="hero__scroll-indicator">
         <span>Rolar</span>
         <div class="scroll-arrow"></div>
+      </div>
+    </section>
+
+    <!-- ========== AVALIAÇÕES ========== -->
+    <section class="section section--reviews" id="avaliacoes">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__tag">O Que Dizem Nossos Clientes</span>
+          <h2 class="section__title">
+            Avaliações <span class="gradient-text">Reais</span>
+          </h2>
+          <p class="section__subtitle">
+            Veja o que quem já usou nossos serviços tem a dizer.
+          </p>
+        </div>
+
+        <!-- Resumo geral -->
+        <div class="reviews__summary">
+          <div class="reviews__score">
+            <span class="reviews__score-number" id="avgScore">5.0</span>
+            <div class="reviews__score-stars" id="avgStars">★★★★★</div>
+            <span class="reviews__score-label"
+              ><span id="reviewCount">0</span> avaliações</span
+            >
+          </div>
+          <div class="reviews__bars" id="reviewBars">
+            <div class="reviews__bar-row">
+              <span>5★</span>
+              <div class="reviews__bar-track">
+                <div
+                  class="reviews__bar-fill"
+                  id="bar5"
+                  style="width: 0%"
+                ></div>
+              </div>
+              <span id="count5">0</span>
+            </div>
+            <div class="reviews__bar-row">
+              <span>4★</span>
+              <div class="reviews__bar-track">
+                <div
+                  class="reviews__bar-fill"
+                  id="bar4"
+                  style="width: 0%"
+                ></div>
+              </div>
+              <span id="count4">0</span>
+            </div>
+            <div class="reviews__bar-row">
+              <span>3★</span>
+              <div class="reviews__bar-track">
+                <div
+                  class="reviews__bar-fill"
+                  id="bar3"
+                  style="width: 0%"
+                ></div>
+              </div>
+              <span id="count3">0</span>
+            </div>
+            <div class="reviews__bar-row">
+              <span>2★</span>
+              <div class="reviews__bar-track">
+                <div
+                  class="reviews__bar-fill"
+                  id="bar2"
+                  style="width: 0%"
+                ></div>
+              </div>
+              <span id="count2">0</span>
+            </div>
+            <div class="reviews__bar-row">
+              <span>1★</span>
+              <div class="reviews__bar-track">
+                <div
+                  class="reviews__bar-fill"
+                  id="bar1"
+                  style="width: 0%"
+                ></div>
+              </div>
+              <span id="count1">0</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cards de avaliações -->
+        <div class="reviews__grid" id="reviewsGrid">
+          <!-- Populados via JS -->
+        </div>
+
+        <!-- Botão ver mais -->
+        <div
+          class="reviews__load-more"
+          id="loadMoreWrapper"
+          style="display: none"
+        >
+          <button class="btn btn--outline" id="loadMoreBtn">
+            Ver mais avaliações
+          </button>
+        </div>
+
+        <!-- Formulário de nova avaliação -->
+        <div class="reviews__form-container">
+          <div class="reviews__form-header">
+            <h3>Deixe sua avaliação</h3>
+            <p>Sua opinião ajuda outros clientes e melhora nosso serviço.</p>
+          </div>
+          <div class="reviews__form" id="reviewForm">
+            <div class="form__row">
+              <div class="form__group">
+                <label>Seu nome *</label>
+                <input
+                  type="text"
+                  id="reviewName"
+                  placeholder="Como quer ser identificado"
+                  maxlength="40"
+                />
+              </div>
+              <div class="form__group">
+                <label>Serviço utilizado *</label>
+                <select id="reviewService">
+                  <option value="">Selecione</option>
+                  <option value="Higienização de Estofados">
+                    Higienização de Estofados
+                  </option>
+                  <option value="Higienização de Veículos">
+                    Higienização de Veículos
+                  </option>
+                  <option value="Carpetes e Tapetes">Carpetes e Tapetes</option>
+                  <option value="Combo">Combo (mais de um serviço)</option>
+                </select>
+              </div>
+            </div>
+            <div class="form__group">
+              <label>Sua nota *</label>
+              <div class="star-picker" id="starPicker">
+                <span class="star-pick" data-value="1">★</span>
+                <span class="star-pick" data-value="2">★</span>
+                <span class="star-pick" data-value="3">★</span>
+                <span class="star-pick" data-value="4">★</span>
+                <span class="star-pick" data-value="5">★</span>
+                <span class="star-pick__label" id="starLabel"
+                  >Selecione uma nota</span
+                >
+              </div>
+            </div>
+            <div class="form__group">
+              <label>Seu comentário *</label>
+              <textarea
+                id="reviewText"
+                rows="3"
+                placeholder="Conte como foi a experiência..."
+                maxlength="300"
+              ></textarea>
+              <span class="char-counter"
+                ><span id="charCount">0</span>/300</span
+              >
+            </div>
+            <button class="btn btn--primary" id="submitReview">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z" />
+              </svg>
+              Publicar Avaliação
+            </button>
+          </div>
+          <div
+            class="reviews__form-success"
+            id="reviewSuccess"
+            style="display: none"
+          >
+            <div class="success__icon">✓</div>
+            <h4>Avaliação publicada!</h4>
+            <p>Obrigado pelo seu feedback. Ele já aparece na lista.</p>
+            <button class="btn btn--outline" id="newReviewBtn">
+              Avaliar novamente
+            </button>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -242,7 +426,6 @@
             </ul>
             <a href="#agendamento" class="service-card__cta">Agendar →</a>
           </div>
-
           <div class="service-card service-card--featured" data-index="1">
             <div class="service-card__badge">Mais Pedido</div>
             <div class="service-card__icon">
@@ -293,7 +476,6 @@
             </ul>
             <a href="#agendamento" class="service-card__cta">Agendar →</a>
           </div>
-
           <div class="service-card" data-index="2">
             <div class="service-card__icon">
               <svg width="40" height="40" viewBox="0 0 64 64" fill="none">
@@ -398,8 +580,8 @@
             <form class="booking__form" id="bookingForm">
               <div class="form__row">
                 <div class="form__group">
-                  <label for="nome">Nome completo *</label>
-                  <input
+                  <label for="nome">Nome completo *</label
+                  ><input
                     type="text"
                     id="nome"
                     name="nome"
@@ -408,8 +590,8 @@
                   />
                 </div>
                 <div class="form__group">
-                  <label for="telefone">WhatsApp *</label>
-                  <input
+                  <label for="telefone">WhatsApp *</label
+                  ><input
                     type="tel"
                     id="telefone"
                     name="telefone"
@@ -432,8 +614,8 @@
               </div>
               <div class="form__row">
                 <div class="form__group">
-                  <label for="data">Data preferida *</label>
-                  <input type="date" id="data" name="data" required />
+                  <label for="data">Data preferida *</label
+                  ><input type="date" id="data" name="data" required />
                 </div>
                 <div class="form__group">
                   <label for="periodo">Período</label>
@@ -444,8 +626,8 @@
                 </div>
               </div>
               <div class="form__group">
-                <label for="endereco">Endereço do serviço</label>
-                <input
+                <label for="endereco">Endereço do serviço</label
+                ><input
                   type="text"
                   id="endereco"
                   name="endereco"
@@ -453,8 +635,8 @@
                 />
               </div>
               <div class="form__group">
-                <label for="mensagem">Observações</label>
-                <textarea
+                <label for="mensagem">Observações</label
+                ><textarea
                   id="mensagem"
                   name="mensagem"
                   rows="3"
@@ -506,22 +688,19 @@
             <div class="contact-item">
               <span class="contact-item__icon">📍</span>
               <div>
-                <strong>Rua Anita Garibaldi, 527</strong>
-                <span>Bairro Serrinha — Fortaleza, CE</span>
+                <strong>Rua Anita Garibaldi, 527</strong
+                ><span>Bairro Serrinha — Fortaleza, CE</span>
               </div>
             </div>
             <div class="contact-item">
               <span class="contact-item__icon">📞</span>
               <div>
-                <strong>(85) 99294-9513</strong>
-                <span>(85) 98720-2573</span>
+                <strong>(85) 99294-9513</strong><span>(85) 98720-2573</span>
               </div>
             </div>
             <div class="contact-item">
               <span class="contact-item__icon">✉️</span>
-              <div>
-                <strong>contato@prosperaclean.com.br</strong>
-              </div>
+              <div><strong>contato@prosperaclean.com.br</strong></div>
             </div>
             <div class="contact-social">
               <a
